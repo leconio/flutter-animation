@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'animtions/transition.dart';
+import 'animtions/transition_fade.dart';
+import 'animtions/transition_scale.dart';
 import 'animtions/tween.dart';
 
 void main() => runApp(MyApp());
@@ -41,10 +42,18 @@ class FirstScreen extends StatelessWidget {
             RaisedButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                  return TransitionWidget();
+                  return FadeTransitionWidget();
                 }));
               },
-              child: Text("Transition"),
+              child: Text("FadeTransition"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return ScaleTransitionWidget();
+                }));
+              },
+              child: Text("ScaleTransition"),
             )
           ],
         ),

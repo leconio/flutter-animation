@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class TransitionWidget extends StatefulWidget {
+class FadeTransitionWidget extends StatefulWidget {
   @override
-  _TransitionWidgetState createState() => _TransitionWidgetState();
+  _FadeTransitionWidgetState createState() => _FadeTransitionWidgetState();
 }
 
-class _TransitionWidgetState extends State<TransitionWidget>
+class _FadeTransitionWidgetState extends State<FadeTransitionWidget>
     with TickerProviderStateMixin {
   AnimationController _controller;
   CurvedAnimation _animation;
