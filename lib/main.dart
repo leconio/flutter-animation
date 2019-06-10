@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'animtions/animated_switcher.dart';
+import 'animtions/animation_container.dart';
 import 'animtions/transition_fade.dart';
 import 'animtions/transition_scale.dart';
 import 'animtions/tween.dart';
@@ -24,7 +26,7 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("动画"),
+        title: Text("双击返回"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -33,7 +35,8 @@ class FirstScreen extends StatelessWidget {
           children: <Widget>[
             RaisedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
                   return TweenWidget();
                 }));
               },
@@ -41,7 +44,8 @@ class FirstScreen extends StatelessWidget {
             ),
             RaisedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
                   return FadeTransitionWidget();
                 }));
               },
@@ -49,12 +53,31 @@ class FirstScreen extends StatelessWidget {
             ),
             RaisedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
                   return ScaleTransitionWidget();
                 }));
               },
               child: Text("ScaleTransition"),
-            )
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return AnimatedContainerDemoWidget();
+                }));
+              },
+              child: Text("AnimatedContainer"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return AnimatedSwitcherDemoWidget();
+                }));
+              },
+              child: Text("AnimatedSwitcher"),
+            ),
           ],
         ),
       ),
