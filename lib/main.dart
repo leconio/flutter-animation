@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'animtions/animated_align.dart';
+import 'animtions/animated_crossFade.dart';
 import 'animtions/animated_switcher.dart';
 import 'animtions/animation_container.dart';
 import 'animtions/transition_fade.dart';
@@ -77,6 +79,24 @@ class FirstScreen extends StatelessWidget {
                 }));
               },
               child: Text("AnimatedSwitcher"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return AnimatedCrossFadeDemoWidget();
+                }));
+              },
+              child: Text("AnimatedCrossFade"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return AnimatedAlignDemoWidget();
+                }));
+              },
+              child: Text("AnimatedAlign"),
             ),
           ],
         ),
